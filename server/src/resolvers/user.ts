@@ -9,6 +9,7 @@ import {
   Mutation,
   InputType,
   ObjectType,
+  Query,
 } from "type-graphql";
 
 @InputType()
@@ -42,10 +43,21 @@ class UserResponse {
 
 @Resolver()
 export class UserResolver {
+  @Query(() => User, { nullable: true })
+  me(@Ctx() { req, em }: MyContext) {
+    // you are not logged in
+    if (!req.session.UserID) {
+      return null;
+    }
+
+    const user = em.findOne(User, { id: req.session.UserID });
+    return user;
+  }
+
   @Mutation(() => UserResponse)
   async register(
     @Arg("options") options: UsernamePasswordInput,
-    @Ctx() { em }: MyContext
+    @Ctx() { em, req }: MyContext
   ): Promise<UserResponse> {
     if (options.username.length <= 2) {
       return {
@@ -91,13 +103,18 @@ export class UserResolver {
       }
     }
 
+    // store user id session
+    // this will set a cookie on the user
+    // auto login when registered
+    req.session!.UserID = user.id;
+
     return { user };
   }
 
   @Mutation(() => UserResponse)
   async login(
     @Arg("options") options: UsernamePasswordInput,
-    @Ctx() { em }: MyContext
+    @Ctx() { em, req }: MyContext
   ): Promise<UserResponse> {
     const user = await em.findOne(User, { username: options.username });
     if (!user) {
@@ -122,6 +139,8 @@ export class UserResolver {
         ],
       };
     }
+
+    req.session!.UserID = user.id;
 
     return { user };
   }
