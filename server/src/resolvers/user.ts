@@ -46,11 +46,11 @@ export class UserResolver {
   @Query(() => User, { nullable: true })
   me(@Ctx() { req, em }: MyContext) {
     // you are not logged in
-    if (!req.session.UserID) {
+    if (!req.session.userID) {
       return null;
     }
 
-    const user = em.findOne(User, { id: req.session.UserID });
+    const user = em.findOne(User, { id: req.session.userID });
     return user;
   }
 
@@ -106,7 +106,7 @@ export class UserResolver {
     // store user id session
     // this will set a cookie on the user
     // auto login when registered
-    req.session!.UserID = user.id;
+    req.session!.userID = user.id;
 
     return { user };
   }
@@ -140,7 +140,7 @@ export class UserResolver {
       };
     }
 
-    req.session!.UserID = user.id;
+    req.session!.userID = user.id;
 
     return { user };
   }
