@@ -1,6 +1,3 @@
-import argon2 from "argon2";
-import { MyContext } from "src/types";
-import { User } from "../entities/User";
 import {
   Resolver,
   Field,
@@ -11,6 +8,9 @@ import {
   ObjectType,
   Query,
 } from "type-graphql";
+import argon2 from "argon2";
+import { MyContext } from "src/types";
+import { User } from "../entities/User";
 
 @InputType()
 class UsernamePasswordInput {
@@ -81,17 +81,20 @@ export class UserResolver {
       };
     }
 
-    const hashpassword = await argon2.hash(options.password);
+    const hashedPassword = await argon2.hash(options.password);
+
     const user = em.create(User, {
       username: options.username,
-      password: hashpassword,
+      password: hashedPassword,
     });
 
     try {
       await em.persistAndFlush(user);
     } catch (err) {
+      console.log(err);
       // duplicate username error
-      if (err.code === "23505" || err.detail.includes("already exists")) {
+      // || err.detail.includes("already exists")
+      if (err.code === "23505") {
         return {
           errors: [
             {
