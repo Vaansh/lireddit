@@ -12,6 +12,7 @@
     "@chakra-ui/core": "^0.5.2",
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
+    "@urql/exchange-graphcache": "^3.0.2",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.5",
     "graphql": "^15.3.0",
@@ -21,10 +22,10 @@
     "urql": "^1.10.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.21.3",
-    "@graphql-codegen/typescript": "1.21.1",
-    "@graphql-codegen/typescript-operations": "1.17.15",
-    "@graphql-codegen/typescript-urql": "^2.0.5",
+    "@graphql-codegen/cli": "1.17.7",
+    "@graphql-codegen/typescript": "1.17.7",
+    "@graphql-codegen/typescript-operations": "1.17.7",
+    "@graphql-codegen/typescript-urql": "^2.0.0",
     "@types/node": "^14.0.27",
     "typescript": "^3.9.7"
   }
