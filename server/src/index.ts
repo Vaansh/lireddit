@@ -3,7 +3,7 @@ import redis from "redis";
 import cors from "cors";
 import express from "express";
 import session from "express-session";
-import { __prod__ } from "./constants";
+import { COOKIE_NAME, __prod__ } from "./constants";
 import connectRedis from "connect-redis";
 import { buildSchema } from "type-graphql";
 import { MikroORM } from "@mikro-orm/core";
@@ -32,7 +32,7 @@ const main = async () => {
 
   app.use(
     session({
-      name: "qid",
+      name: COOKIE_NAME,
       store: new RedisStore({
         client: redisClient,
         disableTouch: true,
