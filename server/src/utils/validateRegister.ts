@@ -1,15 +1,6 @@
 import { UsernamePasswordInput } from "../resolvers/UsernamePasswordInput";
 
 export const validateRegister = (options: UsernamePasswordInput) => {
-  if (!options.email.includes("@")) {
-    return [
-      {
-        field: "email",
-        message: "invalid email",
-      },
-    ];
-  }
-
   if (options.username.length <= 2) {
     return [
       {
@@ -24,6 +15,15 @@ export const validateRegister = (options: UsernamePasswordInput) => {
       {
         field: "username",
         message: "cannot include @",
+      },
+    ];
+  }
+
+  if (!options.email.includes("@")) {
+    return [
+      {
+        field: "email",
+        message: "invalid email",
       },
     ];
   }
