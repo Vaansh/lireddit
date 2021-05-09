@@ -25,7 +25,7 @@ const main = async () => {
     entities: [Post, User],
   });
 
-  // await Post.delete({});
+  await Post.delete({});
 
   const app = express();
   const port = 4000;
