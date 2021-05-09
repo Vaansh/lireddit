@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { Box, Button, Flex, Link } from "@chakra-ui/core";
 import { Formik, Form } from "formik";
 import { Wrapper } from "../../components/Wrapper";
-import { InputField } from "../../InputField";
+import { InputField } from "../../components/InputField";
 import { useChangePasswordMutation } from "../../generated/graphql";
 import { useRouter } from "next/router";
 import { toErrorMap } from "../../utils/toErrorMaps";
