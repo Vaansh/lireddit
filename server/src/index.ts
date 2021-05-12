@@ -29,12 +29,14 @@ const main = async () => {
 
   await conn.runMigrations();
 
+  // await Post.delete({});
+
   const app = express();
   const port = 4000;
 
   const RedisStore = connectRedis(session);
   const redis = new Redis();
-
+  //
   app.use(
     cors({
       origin: "http://localhost:3000",
