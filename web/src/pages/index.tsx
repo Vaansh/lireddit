@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 const Index = () => {
   const [variables, setVariables] = useState({
-    limit: 33,
+    limit: 10,
     cursor: null as null | string,
   });
   const [{ data, fetching }] = usePostsQuery({
