@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "dotenv-safe/config";
 import express from "express";
 import session from "express-session";
 import { COOKIE_NAME, __prod__ } from "./constants";
@@ -21,9 +22,7 @@ import { createUpdootLoader } from "./utils/createUpdootLoader";
 const main = async () => {
   const conn = await createConnection({
     type: "postgres",
-    database: "lireddit2",
-    username: "postgres",
-    password: "postgres",
+    url: process.env.DATABASE_URL,
     logging: true,
     synchronize: true,
     migrations: [path.join(__dirname, "./migrations/*")],
@@ -35,14 +34,14 @@ const main = async () => {
   // await Post.delete({});
 
   const app = express();
-  const port = 4000;
+  const port = parseInt(process.env.PORT_URL);
 
   const RedisStore = connectRedis(session);
-  const redis = new Redis();
-  //
+  const redis = new Redis(process.env.REDIS_URL);
+  app.set("trust proxy", 1);
   app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: process.env.CORS_ORIGIN,
       credentials: true,
     })
   );
@@ -59,9 +58,10 @@ const main = async () => {
         httpOnly: true,
         sameSite: "lax", //csrf
         secure: __prod__, // cookie only works in https
+        domain: __prod__ ? ".lireddit.eastus.cloudapp.azure.com" : undefined,
       },
       saveUninitialized: false,
-      secret: "jnfsnfaodjfnaofn",
+      secret: process.env.SESSION_SECRET,
       resave: false,
     })
   );
