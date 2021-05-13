@@ -44,7 +44,7 @@ export class UserResolver {
   @FieldResolver(() => String)
   email(@Root() user: User, @Ctx() { req }: MyContext) {
     // secure -> ok to show own email
-    if (req.session.userID === user.id) {
+    if (req.session.userId === user.id) {
       return user.email;
     }
     // secure -> not ok to show anyone else's email
@@ -105,7 +105,7 @@ export class UserResolver {
     await redis.del(key);
 
     // log in user after changing password
-    req.session.userID = user.id;
+    req.session.userId = user.id;
 
     return { user };
   }
@@ -141,10 +141,10 @@ export class UserResolver {
   @Query(() => User, { nullable: true })
   me(@Ctx() { req }: MyContext) {
     // you are not logged in
-    if (!req.session.userID) {
+    if (!req.session.userId) {
       return null;
     }
-    return User.findOne(req.session.userID);
+    return User.findOne(req.session.userId);
   }
 
   @Mutation(() => UserResponse)
@@ -198,7 +198,7 @@ export class UserResolver {
     // store user id session
     // this will set a cookie on the user
     // auto login when registered
-    req.session!.userID = user.id;
+    req.session!.userId = user.id;
 
     return { user };
   }
@@ -237,7 +237,7 @@ export class UserResolver {
       };
     }
 
-    req.session!.userID = user.id;
+    req.session!.userId = user.id;
 
     return { user };
   }

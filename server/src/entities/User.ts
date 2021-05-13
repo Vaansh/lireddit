@@ -9,6 +9,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { Post } from "./Post";
+import { Updoot } from "./Updoot";
 
 @ObjectType()
 @Entity()
@@ -16,9 +17,6 @@ export class User extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
   id!: number;
-
-  @OneToMany(() => Post, (post) => post.creator)
-  posts: Post[];
 
   @Field()
   @Column({ unique: true })
@@ -30,6 +28,12 @@ export class User extends BaseEntity {
 
   @Column({ type: "text" })
   password!: string;
+
+  @OneToMany(() => Post, (post) => post.creator)
+  posts: Post[];
+
+  @OneToMany(() => Updoot, (updoot) => updoot.user)
+  updoots: Updoot[];
 
   @Field(() => String)
   @CreateDateColumn()
