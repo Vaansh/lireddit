@@ -168,7 +168,7 @@ export class PostResolver {
   // get one post by id
   @Query(() => Post, { nullable: true })
   post(@Arg("id", () => Int) id: number): Promise<Post | undefined> {
-    return Post.findOne(id);
+    return Post.findOne(id, { relations: ["creator"] });
   }
 
   // @Mutation - for updating/inserting/deleting data
