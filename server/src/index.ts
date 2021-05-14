@@ -34,15 +34,15 @@ const main = async () => {
   // await Post.delete({});
 
   const app = express();
-  const port = parseInt(process.env.PORT_URL);
+  const port = parseInt(process.env.PORT);
 
   const RedisStore = connectRedis(session);
   const redis = new Redis(process.env.REDIS_URL);
   app.set("trust proxy", 1);
   app.use(
     cors({
-      origin: process.env.CORS_ORIGIN,
       credentials: true,
+      origin: process.env.CORS_ORIGIN,
     })
   );
 
@@ -58,7 +58,7 @@ const main = async () => {
         httpOnly: true,
         sameSite: "lax", //csrf
         secure: __prod__, // cookie only works in https
-        domain: __prod__ ? ".lireddit.eastus.cloudapp.azure.com" : undefined,
+        domain: __prod__ ? ".vaansh.me" : undefined,
       },
       saveUninitialized: false,
       secret: process.env.SESSION_SECRET,
