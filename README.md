@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/github/issues/Vaansh/lireddit.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/Vaansh/lireddit/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/Vaansh/lireddit.svg?style=for-the-badge">
+    <img src="https://img.shields.io/github/license/gatsbyjs/gatsby.svg?style=for-the-badge">
   </a>
   <a href="https://linkedin.com/in/Vaansh">
     <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555">
@@ -50,7 +50,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="">Built With</a></li>
+        <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
