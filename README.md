@@ -201,7 +201,5 @@ Project Link: [https://github.com/Vaansh/lireddit](https://github.com/Vaansh/lir
 
 - [Ben Awad](https://www.benawad.com)
 - [LiReddit Logo](https://i.pinimg.com/originals/0d/f7/5a/0df75a7a9d23f959a2b81996400ac752.png)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Img Shields](https://shields.io)
 - [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Pages](https://pages.github.com)
