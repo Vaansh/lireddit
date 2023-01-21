@@ -11,15 +11,6 @@
   <a href="https://github.com/Vaansh/lireddit/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/Vaansh/lireddit.svg?style=for-the-badge">
   </a>
-  <a href="https://github.com/Vaansh/lireddit/network/members">
-    <img src="https://img.shields.io/github/forks/Vaansh/lireddit.svg?style=for-the-badge">
-  </a>
-  <a href="https://github.com/Vaansh/lireddit/stargazers">
-    <img src="https://img.shields.io/github/stars/Vaansh/lireddit.svg?style=for-the-badge">
-  </a>
-  <a href="https://github.com/Vaansh/lireddit/issues">
-    <img src="https://img.shields.io/github/issues/Vaansh/lireddit.svg?style=for-the-badge">
-  </a>
   <a href="https://github.com/Vaansh/lireddit/blob/main/LICENSE.md">
     <img src="https://img.shields.io/github/license/gatsbyjs/gatsby.svg?style=for-the-badge">
   </a>
@@ -43,11 +34,6 @@
     <a href="https://github.com/Vaansh/lireddit"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://vaansh.me">View Demo</a>
-    ·
-    <a href="https://github.com/Vaansh/lireddit/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Vaansh/lireddit/issues">Request Feature</a>
   </p>
 </p>
 
@@ -69,11 +55,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -103,12 +85,11 @@ This is a fullstack website that is deployed on Azure and Vercel. The motive beh
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-You can clone use the docker image and deploy it to on any virtual machine.
+You can use the docker image and deploy it to on any virtual machine.
 
 - dokku 0.19.x+
 - docker 1.8.x
@@ -165,41 +146,8 @@ Some functionalities
 - posts are loaded chronologically
 - login/register (sensitive credentials hashed using argon)
 
-## Roadmap
-
-See the [open issues](https://github.com/Vaansh/lireddit/issues) for a list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 <!-- LICENSE -->
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
-
-## Contact
-
-Vaansh Lakhwara - [@1nshed](https://twitter.com/vaansh_lakhwara) - vaanshlakhwara@gmail.com
-
-Project Link: [https://github.com/Vaansh/lireddit](https://github.com/Vaansh/lireddit)
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- [Ben Awad](https://www.benawad.com)
-- [LiReddit Logo](https://i.pinimg.com/originals/0d/f7/5a/0df75a7a9d23f959a2b81996400ac752.png)
-- [Img Shields](https://shields.io)
-- [Choose an Open Source License](https://choosealicense.com)
